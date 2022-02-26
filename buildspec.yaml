@@ -1,0 +1,10 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - touch hemanth.txt
+      - touch vineeth.txt
+artifacts:
+  files:
+    - '**/*'
