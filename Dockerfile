@@ -9,7 +9,7 @@
 FROM alpine:latest
 
 # File Author / Maintainer
-MAINTAINER "Rich Nason" hchitrad@amazon.com
+MAINTAINER "Rich Nason" hemanthkrishchitrada@gmail.com
 
 ###################################################################
 #***************  OVERRIDE ENABLED ENV VARIABLES  *****************
@@ -21,7 +21,7 @@ MAINTAINER "Rich Nason" hchitrad@amazon.com
 ###################################################################
 
 # Install dependencies
-RUN apk update && apk add curl python py-pip jq vim
+RUN apk update && apk add curl python3 py-pip jq vim
 
 # Install bottle if running the python file directly
 RUN pip install bottle
