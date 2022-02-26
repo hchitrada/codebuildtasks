@@ -9,7 +9,8 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Building the Docker image...          
-      - docker build -t simpleapi:latest .
+      - docker build -t simpleapi:latest . 
+      - echo Hello world
       - docker tag simpleapi:latest 264161240947.dkr.ecr.us-east-1.amazonaws.com/cdk-hnb659fds-container-assets-264161240947-us-east-1   
   post_build:
     commands:
