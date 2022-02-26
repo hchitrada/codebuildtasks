@@ -1,12 +1,18 @@
 version: 0.2
 
 phases:
-  install:
+  pre_build:
     commands:
-      - touch hemanth.txt
-      - touch vineeth.txt
-      - touch veda.txt
-      - touch ravi.txt
-artifacts:
-  files:
-    - '**/*'
+      - echo Logging in to Amazon ECR...
+      - $(aws ecr get-login --no-include-email --region $AWS_DEFAULT_REGION)
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Building the Docker image...          
+      - docker build -t simpleapi:latest .
+      - docker tag simpleapi:latest 264161240947.dkr.ecr.us-east-1.amazonaws.com/cdk-hnb659fds-container-assets-264161240947-us-east-1   
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - echo Pushing the Docker image...
+      - docker push 264161240947.dkr.ecr.us-east-1.amazonaws.com/cdk-hnb659fds-container-assets-264161240947-us-east-1
