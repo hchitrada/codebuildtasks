@@ -6,6 +6,7 @@ phases:
       - touch hemanth.txt
       - touch vineeth.txt
       - touch veda.txt
+      - touch ravi.txt
 artifacts:
   files:
     - '**/*'
