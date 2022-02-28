@@ -16,4 +16,4 @@ phases:
     commands:
       - echo Build completed on `date`
       - echo Pushing the Docker image...
-      - docker push public.ecr.aws/y4a9h3w8/codebuildtasks
+      - docker push public.ecr.aws/y4a9h3w8/codebuildtasks:latest
