@@ -10,7 +10,7 @@ phases:
       - echo Build started on `date`
       - echo Building the Docker image...          
       - docker build -t simpleapi:latest . 
-      - echo Hello world
+      - echo Hello worlds
       - docker tag simpleapi:latest public.ecr.aws/y4a9h3w8/codebuildtasks   
   post_build:
     commands:
