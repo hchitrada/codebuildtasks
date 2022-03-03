@@ -11,9 +11,9 @@ phases:
       - echo Building the Docker image...          
       - docker build -t simpleapi:latest . 
       - echo Hello worlds
-      - docker tag simpleapi:latest public.ecr.aws/y4a9h3w8/codebuildtasks   
+      - docker tag simpleapi:latest 264161240947.dkr.ecr.us-east-1.amazonaws.com/cdk-hnb659fds-container-assets-264161240947-us-east-1   
   post_build:
     commands:
       - echo Build completed on `date`
       - echo Pushing the Docker image...
-      - docker push public.ecr.aws/y4a9h3w8/codebuildtasks:latest
+      - docker push 264161240947.dkr.ecr.us-east-1.amazonaws.com/cdk-hnb659fds-container-assets-264161240947-us-east-1
