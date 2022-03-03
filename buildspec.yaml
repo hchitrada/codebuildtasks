@@ -1,20 +1,11 @@
 version: 0.2
 
 phases:
-  pre_build:
+  install:
     commands:
-      - echo Logging in to Amazon ECR...
-      - $(aws ecr get-login --no-include-email --region $AWS_DEFAULT_REGION)
       - echo "${DOCKERHUB_PASSWORD}" | docker login -u "${DOCKERHUB_USERNAME}" --password-stdin
+
   build:
     commands:
-      - echo Build started on `date`
-      - echo Building the Docker image...
-      - docker build -t simpleapi:latest . 
-      - echo Hello worlds
-      - docker tag simpleapi:latest 264161240947.dkr.ecr.us-east-1.amazonaws.com/testdockerpull   
-  post_build:
-    commands:
-      - echo Build completed on `date`
-      - echo Pushing the Docker image...
-      - docker push 264161240947.dkr.ecr.us-east-1.amazonaws.com/testdockerpull
+      - docker pull docker:dind
+ 
